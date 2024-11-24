@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import ContactCard from './ContactCard';
 import './App.css';
 
 function App() {
+  // State to hold contacts data
+  const [contacts, setContacts] = useState([]);
+
+  // Fetch contacts from the API when the component mounts
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => response.json())
+      .then((data) => setContacts(data))
+      .catch((error) => console.error('Error fetching contacts:', error));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <h1 className="app-title">My Contacts</h1>
+      <div className="contacts-grid">
+        {contacts.map((contact) => (
+          <ContactCard key={contact.id} contact={contact} />
+        ))}
+      </div>
     </div>
   );
 }
