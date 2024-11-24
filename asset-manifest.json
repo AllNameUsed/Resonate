@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Resonate/static/css/main.a3e8d3c8.css",
+    "main.js": "/Resonate/static/js/main.72709efb.js",
+    "index.html": "/Resonate/index.html",
+    "main.a3e8d3c8.css.map": "/Resonate/static/css/main.a3e8d3c8.css.map",
+    "main.72709efb.js.map": "/Resonate/static/js/main.72709efb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a3e8d3c8.css",
+    "static/js/main.72709efb.js"
+  ]
+}
